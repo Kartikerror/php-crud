@@ -1,0 +1,72 @@
+<%@page contentType="text/html" pageEncoding="UTF - 8"%>
+    <! DOCTYPE html>
+    <html>
+
+    <head>
+        <meta http- equiv="Content-Type" content="text/html; charset=UTF -8">
+        <title>JSP Page</title>
+        </ head>
+
+        <body>
+            <h1>Login Page</h1>
+
+            <form action="verify. jsp">
+                Enter name: <input type="text" name="name" /><br> Enter password: <input type="password" name="pwd" /><br>
+                <input type="submit" />
+            </form>
+            </ body>
+
+    </html>
+
+
+
+
+
+    Verify.jsp: -
+
+
+    <%@page contentType="text/html" pageEncoding="UTF - 8"%>
+        <! DOCTYPE html>
+        <html>
+
+        <head>
+            <meta http- equiv="Content-Type" content="text/html; charset=UTF -8">
+            <title>JSP Page</title>
+            </ head>
+
+            <body>
+                <%
+String name = request. getParameter("name"); String pass = request. getParameter("pwd");
+if( name.equals("kartik")&& pass. equals("kartik@ 1910"))
+{
+%>
+                    <jsp: forward page="welcome.jsp" />
+                    <%}
+else{%>
+                        <h1>wrong user name and password, try again!</h1>
+                        <jsp:include page="index.jsp" />
+                        <%}%>
+                            </ body>
+
+        </html>
+        Welcome.jsp
+
+
+        <%@page contentType="text/html" pageEncoding="UTF - 8"%>
+            <! DOCTYPE html>
+            <html>
+
+            <head>
+                <meta http- equiv="Content-Type" content="text/html; charset=UTF -8">
+                <title>JSP Page</title>
+                </ head>
+
+                <body>
+                    <%
+String name = request. getParameter("name"); String pass = request. getParameter("pwd");
+%>
+                        welcome
+                        <%=name%>
+                            </ body>
+
+            </html>
